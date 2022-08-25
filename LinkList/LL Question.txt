@@ -1,0 +1,19 @@
+odd ll revse
+evven LL return 
+
+sum
+avg
+middle
+delete head and tail and position
+add head and tail and postion 
+queue
+Stack
+reverse LL
+find node from last and head
+palindrome
+Fibo
+factorial
+prime
+add to LL
+Loop LL
+Doble LL
