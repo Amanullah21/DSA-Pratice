@@ -12,7 +12,7 @@
 // Output
 
 // Output one integer which the maximum number of times an odd number is repeated in array.
-// Sample Input 1 
+// Sample Input 1
 // 12
 // 1 1 1 1 2 2 2 2 2 1 1 1
 // Sample Output 1
@@ -27,23 +27,18 @@
 // 1 occurs4times and3times continuously, so4is maximumnumber of times an odd number is continuously repeated in this array.
 
 function longestRepeatedOdd(N, array) {
+  let count = 0;
+  let total = 0;
+  let temp = 0;
 
-    let count=0
-  	let total=0
-    let temp=0
-
-    for(i=0;i<array.length;i++){
-       if( array[i] == temp && array[i] % 2 !== 0)
-          count++
-       else if(array [i] %2 ==0)
-          count =0
-       else
-          count = 1
-       temp = array[i]
-        if( count >= total)
-           total = count
-      }
-     console.log(total)  
+  for (i = 0; i < array.length; i++) {
+    if (array[i] == temp && array[i] % 2 !== 0) count++;
+    else if (array[i] % 2 == 0) count = 0;
+    else count = 1;
+    temp = array[i];
+    if (count >= total) total = count;
+  }
+  console.log(total);
 }
-const arr =[1,1,1,1,2,2,2,2,2,1,1,1,1,1]
-longestRepeatedOdd(arr.length,arr)
+const arr = [1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1];
+longestRepeatedOdd(arr.length, arr);

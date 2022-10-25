@@ -1,3 +1,5 @@
+//given two sorted array then find the common value
+
 arr1 = [1, 2, 3, 5, 6, 7];
 arr2 = [3, 6, 7, 8, 20];
 output = [3, 6, 7];
