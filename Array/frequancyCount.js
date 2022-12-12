@@ -8,6 +8,9 @@ const frequancyCount = (arr) => {
     obj[key] = obj[key] + 1 || 1;
   }
   console.log(obj, "1st way");
+  for(key in obj){
+    console.log(key,obj[key])
+  }
 };
 frequancyCount(arr, obj);
 
@@ -49,3 +52,12 @@ const frequancyCount3 = (arr) => {
 };
 
 frequancyCount3(arr, obj);
+
+const freCout =(arr,obj)=>{
+    for(const key of arr){
+      obj[key] = obj[key]+1 || 1
+    }
+
+    console.log(obj)
+}
+freCout(arr,obj)
