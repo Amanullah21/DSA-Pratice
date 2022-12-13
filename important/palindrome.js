@@ -70,7 +70,33 @@
 // };
 // validPalindrome3(123);
 
-const validPalindrome4=(str)=>{
-  return str == str.split('').reverse().join('')
-}
-console.log(validPalindrome4('12321'))
+const validPalindrome4 = (str) => {
+  return str == str.split("").reverse().join("");
+};
+// console.log(validPalindrome4('12321'))
+
+const validPalindrome5 = (str) => {
+  let left = 0;
+  let right = str.length - 1;
+  while (left < right) {
+    if (str[left] == str[right]) {
+      left++;
+      right--;
+    } else {
+      console.log("Not palindrome");
+      return;
+    }
+  }
+  console.log("palidrome5");
+};
+validPalindrome5("12321");
+validPalindrome5("1231");
+
+const palindromeP = (str) => {
+  let newStr = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    newStr += str[i];
+  }
+  str == newStr ? console.log("Palindrome") : console.log("not palindrome");
+};
+// palindromeP('12321')
