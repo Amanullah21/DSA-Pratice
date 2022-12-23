@@ -36,9 +36,9 @@ class LinkList {
     return this.head;
   }
 
+// addng to position 
   addToPosition(data, pos) {
     const node = new Node(data);
-
     if (!this.head) {
       this.head = data;
       return this.head;
@@ -61,26 +61,26 @@ class LinkList {
     return this.head;
   }
 
-  deleteNodeFromPos(position) {
-    let temp = this.head;
-    if (this.head == null) {
-      return null;
-    }
-    if (position == 0) {
-      this.head = this.head.next;
-      return this.head;
-    }
-    let size = 1;
-    while (temp !== null) {
-      if (size == position) {
-        temp.next = temp.next.next;
-        break;
-      }
-      size++;
-      temp = temp.next;
-    }
+  // delating from head
+  deleteToHead() {
+    this.head = this.head.next;
     return this.head;
   }
+
+  // delete data from tail
+  deleteToTail() {
+    if (this.head == null) {
+      return this.head;
+    }
+    let current = this.head;
+    while (current.next.next && current.next) {
+      current = current.next;
+    }
+    current.next = current.next.next;
+    return this.head;
+  }
+
+  
 
   print() {
     let current = this.head;
@@ -94,18 +94,6 @@ class LinkList {
 }
 
 const ll = new LinkList();
-ll.addToHead(5);
-ll.addToHead(4);
 ll.addToHead(1);
-ll.print();
-
-ll.addToTail(10);
-ll.addToTail(4);
-ll.print();
-
-ll.addToPosition(2, 2);
-ll.print();
-
-ll.deleteNodeFromPos(4);
-ll.deleteNodeFromPos(2);
+ll.addToHead(2);
 ll.print();
