@@ -1,99 +1,116 @@
 class Node {
-  constructor(data, next = null) {
-    this.data = data;
-    this.next = null;
-  }
+    constructor(data, next = null) {
+        this.data = data
+        this.next = null
+    }
 }
 
-class LinkList {
-  constructor() {
-    this.head = null;
-  }
-
-  //add data at this.head
-  addToHead(data) {
-    let node = new Node(data);
-    if (this.head == null) {
-      this.head = node;
-      return this.head;
-    }
-    node.next = this.head;
-    this.head = node;
-  }
-
-  //adding data at tail
-  addToTail(data) {
-    let node = new Node(data);
-    if (this.head == null) {
-      this.head = node;
-      return this.head;
-    }
-    let current = this.head;
-    while (current.next) {
-      current = current.next;
-    }
-    current.next = node;
-    return this.head;
-  }
-
-// addng to position 
-  addToPosition(data, pos) {
-    const node = new Node(data);
-    if (!this.head) {
-      this.head = data;
-      return this.head;
+class linkList {
+    constructor() {
+        this.head = null
     }
 
-    if (pos == 0) {
-      node.next = this.head;
-      this.head = node;
-      return node;
+    addToHead(data) {
+        let node = new Node(data)
+        if (this.head == null) {
+            this.head = node
+            return this.head
+        }
+        node.next = this.head
+        this.head = node
     }
 
-    let current = this.head;
-    let count = 1;
-    while (count != pos) {
-      count++;
-      current = current.next;
+    addToTail(data) {
+        let node = new Node(data)
+        if (this.head == null) {
+            this.head = node
+            return this.head
+        }
+        let current = this.head
+        while (current.next) {
+            current = current.next
+        }
+        current.next = node
+        return this.head
     }
-    node.next = current.next;
-    current.next = node;
-    return this.head;
-  }
 
-  // delating from head
-  deleteToHead() {
-    this.head = this.head.next;
-    return this.head;
-  }
-
-  // delete data from tail
-  deleteToTail() {
-    if (this.head == null) {
-      return this.head;
+    addToPosition(data, position) {
+        let node = new Node(data)
+        if (position == 0) {
+            node.next = head
+            head = node
+            return this.head
+        }
+        let current = this.head
+        let index = 1
+        while (current) {
+            if (index == position) {
+                node.next = current.next
+                current.next = node
+                return this.head
+            }
+            current = current.next
+            index++
+        }
+        return this.head
     }
-    let current = this.head;
-    while (current.next.next && current.next) {
-      current = current.next;
-    }
-    current.next = current.next.next;
-    return this.head;
-  }
 
-  
 
-  print() {
-    let current = this.head;
-    let ans = "";
-    while (current) {
-      ans += current.data + " ";
-      current = current.next;
+
+    removeFromHead() {
+        this.head = this.head.next
     }
-    console.log(ans);
-  }
+    removeFromTail() {
+        let current = this.head
+        if (this.head == null) {
+            return null
+        }
+        while (current.next.next && current.next) {
+            current = current.next
+        }
+        current.next = current.next.next
+        return this.head
+    }
+
+    deleteToPosition(position) {
+        if (position == 0) {
+            this.head = this.head.next
+        }
+        let current = this.head
+        let index = 1
+        while (current) {
+            if (index == position) {
+                current.next = current.next.next
+            }
+            current = current.next
+            index++
+        }
+        return this.head
+    }
+
+    print() {
+        let current = this.head
+        let ans = ''
+        if (this.head == null) {
+            console.log("empty linklist")
+        }
+        while (current) {
+            ans += current.data + " "
+            current = current.next
+        }
+        console.log(ans)
+    }
+
+
 }
 
-const ll = new LinkList();
-ll.addToHead(1);
-ll.addToHead(2);
-ll.print();
+let ll = new linkList()
+ll.addToHead(8)
+ll.addToHead(7)
+ll.addToHead(6)
+ll.addToTail(11)
+ll.addToTail(12)
+ll.addToTail(13)
+ll.print()
+ll.deleteToPosition(1)
+ll.print()
