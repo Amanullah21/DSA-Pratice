@@ -32,8 +32,8 @@ const subArrayMaxSum2 = (arr, max, n) => {
     let sum = 0;
     for (let j = i; j < n; j++) {
       sum += arr[j];
+      max = Math.max(max, sum);
     }
-    max = Math.max(max, sum);
   }
   console.log(max);
 };
@@ -43,10 +43,10 @@ subArrayMaxSum2(arr, max, n);
 const subArrayMaxSum3 = (arr, max, n) => {
   for (let i = 0; i < n; i++) {
     sum += arr[i];
-    if (sum < max) {
+    if (sum > max) {
       max = sum;
     }
-    if (sum > 0) {
+    if (sum < 0) {
       sum = 0;
     }
   }

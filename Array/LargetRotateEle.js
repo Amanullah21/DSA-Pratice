@@ -1,5 +1,5 @@
 const k = 1;
-const arr = [3, 4, 5, 1, 2];
+const arr = [3, 4, 5, 6, 1, 2];
 
 const largestRotateElement = (arr, k) => {
   let low = 0;

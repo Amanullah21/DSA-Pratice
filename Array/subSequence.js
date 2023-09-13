@@ -1,20 +1,20 @@
-// // function generateAllSubsequence(str, n, index = -1, current = "") {
-// //   if (index == n) return;
+// function generateAllSubsequence(str, n, index = -1, current = "") {
+//   if (index == n) return;
 
-// //   if (current.length > 0) {
-// //     console.log(current);
-// //   }
+//   if (current.length > 0) {
+//     console.log(current);
+//   }
 
-// //   for (let i = index + 1; i < n; i++) {
-// //     current += str[i];
-// //     generateAllSubsequence(str, n, i, current);
+//   for (let i = index + 1; i < n; i++) {
+//     current += str[i];
+//     generateAllSubsequence(str, n, i, current);
 
-// //     current = current.slice(0, -1);
-// //   }
-// //   return;
-// // }
+//     current = current.slice(0, -1);
+//   }
+//   return;
+// }
 // let str = "abcd";
-// // generateAllSubsequence(str, str.length);
+// generateAllSubsequence(str, str.length);
 
 // let index = 0;
 // let newString = "";
@@ -30,7 +30,7 @@
 //   }
 // };
 
-// // generateAllSubsequence1(str, index, newString);
+// generateAllSubsequence1(str, index, newString);
 
 // const generateAllSubsequence = (str, index = 0, newString = "") => {
 //   if (newString.length != 0) {
