@@ -1,0 +1,1 @@
+// oj sol link - https://oj.masaischool.com/contest/407/submissions/932acee9e75efd0d2189da0c359285d2

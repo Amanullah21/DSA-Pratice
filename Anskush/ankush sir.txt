@@ -1,0 +1,7 @@
+Ankush Sir 
+Oj Linklist Issue with reverse Function done 
+https://leetcode.com/problems/add-two-numbers-ii/submissions/ done
+
+//24 sliding window maximum understand
+
+//https://oj.masaischool.com/contest/412/problem/2 fibodone
